@@ -11,13 +11,32 @@
 // DYNAMIC --> É possível declarar uma variável como possuindo um dinâmico. Ou seja, é possível atribuir a ela valores de tipos diferentes.
 // Ex:
 
-void main(){
-    dynamic teste;
-    teste = 1 + 1; // Tipo Inteiro.
-    print(teste);
-    teste = "Cleber Presidente"; // Tipo String.
-    print(teste);
-}
+    void main(){
+        dynamic teste;
+        teste = 1 + 1; // Tipo Inteiro.
+        print(teste);
+        teste = "Cleber Presidente"; // Tipo String.
+        print(teste);
+    }
+
+
+
+// ************************************************************************************
+// FOREACH
+// ************************************************************************************
+// Em DART, o foreach é feito da seguinte forma :
+
+    void main(){
+        
+        List<int> numeros = [1, 2, 3, 4, 5];
+        int resultado = 1;
+
+        for(var x in numeros){
+            resultado *= x;
+        }
+      
+        print(resultado);
+    }
 
 
 
@@ -98,7 +117,7 @@ void main(){
 
 
 // ************************************************************************************
-// MÉTODOS
+// ORIENTAÇÃO A OBJETOS
 // ************************************************************************************
 
 // ******************************
@@ -172,15 +191,15 @@ void main(){
 // GETTERs and SETTERs
 // ******************************
 // Em DART, os Getters e Setters podem ser simplificados da mesma forma que as funções.
-    
+
     void main(){        
         var pessoa = Pessoa("Cleber", 41, 1.00);
-        print("A idade de " + pessoa.nome + " é " + pessoa.idade.toString() + ".");
+        print("${pessoa.nome} tem ${pessoa.idade} anos e ${pessoa.altura}m de altura.");
   
         pessoa.altura = 1.85;
-        print("A altura de " + pessoa.nome + " é " + pessoa.altura.toString() + ".");
+        print("A altura de ${pessoa.nome} é ${pessoa.altura}m.");
         pessoa.altura = 185;
-        print("A altura de " + pessoa.nome + " é " + pessoa.altura.toString() + ".");
+        print("A altura de ${pessoa.nome} é ${pessoa.altura}m.");
     }
 
     class Pessoa{
@@ -204,8 +223,138 @@ void main(){
 
 
 
+// ******************************
+// HERANÇA
+// ******************************
+// Em DART, a herança é realizada através do comando "extends".
+// A chamada do construtor da classe mãe é feito através do comando super()
+
+    void main(){
+      
+        var cachorro = Cachorro("Dog", 10.0, 100);
+        cachorro.comer();
+        cachorro.fazerSom();
+        cachorro.brincar();
+        
+        var gato = Gato("Cat", 2.0, true);
+        gato.comer();
+        gato.fazerSom();
+        gato.estaAmigavel();
+    }
+
+    class Animal{
+    
+        String nome;
+        double peso;
+
+        Animal(this.nome, this.peso);
+      
+        void comer(){
+          print("$nome comeu !");
+        }
+      
+        void fazerSom(){
+          print("$nome fez algum som !");
+        }
+    }
+
+    class Cachorro extends Animal{
+        
+        int fofura;
+        
+        Cachorro(String nome, double peso, this.fofura) : super(nome, peso);
+        
+        void brincar(){
+            this.fofura += 10;
+            print("Nível de fofura do ${nome} : ${this.fofura}");
+        }
+    }
+
+    class Gato extends Animal{
+        
+        bool humor;
+        
+        Gato(String nome, double peso, this.humor) : super(nome, peso);
+        
+        void estaAmigavel() => print("O gato está amigável ? ${this.humor ? "Sim" : "Não"}");
+    }
 
 
 
+// ******************************
+// OVERRIDE
+// ******************************
+// Em DART, é possível se sobrescrever um método da classe mãe através do comando "@override".
 
+    void main(){
+      
+      var cachorro = Cachorro("Dog", 10.0, 100);
+      print(cachorro);
+      cachorro.comer();
+      cachorro.fazerSom();
+      cachorro.brincar();
+      
+      var gato = Gato("Cat", 2.0, true);
+      print(gato);
+      gato.comer();
+      gato.fazerSom();
+      gato.estaAmigavel();
+    }
+
+    class Animal{
+    
+        String nome;
+        double peso;
+
+        Animal(this.nome, this.peso);
+      
+        void comer(){
+          print("$nome comeu !");
+        }
+      
+        void fazerSom(){
+          print("$nome fez algum som !");
+        }
+    }
+
+    class Cachorro extends Animal{
+      
+        int fofura;
+      
+        Cachorro(String nome, double peso, this.fofura) : super(nome, peso);
+      
+        void brincar(){
+            this.fofura += 10;
+            print("Nível de fofura do ${nome} : ${this.fofura}");
+        }
+      
+        @override     
+        void fazerSom(){
+            print("$nome fez Au! Au!");
+        }
+      
+        @override
+        String toString(){
+            return "O nome do cachorro é $nome.";
+        }
+    }
+
+    class Gato extends Animal{
+      
+        bool humor;
+      
+        Gato(String nome, double peso, this.humor) : super(nome, peso);
+      
+        void estaAmigavel() => print("O gato está amigável ? ${this.humor ? "Sim" : "Não"}");
+      
+        @override     
+        void fazerSom(){
+            print("$nome fez Miau !");
+        }
+      
+        @override
+        String toString(){
+            return "O nome do gato é $nome.";
+        }
+    }
 
