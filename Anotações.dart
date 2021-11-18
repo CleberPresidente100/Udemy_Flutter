@@ -101,7 +101,7 @@
         criarBotao("Parâmetros Padrão", exibirBotao);
         criarBotao("Parâmetros Personalizados", exibirBotao, cor:"Verde", largura:10);
         criarBotao("Função Anônima", (){
-        print("Função Anônima executada com Sucesso !");
+            print("Função Anônima executada com Sucesso !");
         });
     }
 
@@ -358,3 +358,32 @@
         }
     }
 
+
+
+// ******************************
+// STATELESS e STATEFULL
+// ******************************
+/*
+* STATELESS --> "Sem Estado", ou seja, é um Widget que é "uma Constante", que
+*               não se altera e nem tem as suas propriedades alteradas durante a
+*               execução do App.
+*
+* STATEFULL --> É um Widget que é Variável, ou seja, que se altera ou tem as suas
+*               propriedades alteradas durante a execução do App.
+*
+* */
+
+void main(){
+
+
+
+// ******************************
+// ATALHOS
+// ******************************
+/*
+
+Ctrl + L --> Reformatar o Código
+
+Alt + Enter --> Clique sobre um Widget e precione as teclas Alt+Enter para "Envelopá-lo" dentro de um outro Widget.
+
+*/
