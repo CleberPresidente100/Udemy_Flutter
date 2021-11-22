@@ -178,7 +178,7 @@
 
         Pessoa.nascimento(this.nome, this.altura){
 
-            this.idade = 0
+            this.idade = 0;
             print(this.nome);
             print(this.idade);
             print(this.altura);
@@ -373,8 +373,6 @@
 *
 * */
 
-void main(){
-
 
 
 // ******************************
@@ -387,3 +385,7 @@ Ctrl + L --> Reformatar o Código
 Alt + Enter --> Clique sobre um Widget e precione as teclas Alt+Enter para "Envelopá-lo" dentro de um outro Widget.
 
 */
+
+
+
+// keystore UdemyFlutter
