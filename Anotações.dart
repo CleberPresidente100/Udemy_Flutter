@@ -380,7 +380,7 @@
 // ******************************
 /*
 
-Ctrl + L --> Reformatar o Código
+Ctrl + L --> Reformatar o Código (Alterei para Ctrl + Alt + L por causa do Linux)
 
 Alt + Enter --> Clique sobre um Widget e precione as teclas Alt+Enter para "Envelopá-lo" dentro de um outro Widget.
 
