@@ -42,7 +42,6 @@ class _HomeState extends State<Home> {
     catch (exception){
       return null;
     }
-
     return null;
   }
 
